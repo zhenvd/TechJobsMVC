@@ -9,7 +9,10 @@
     <ul>
         @foreach (var action in ViewBag.actions)
         {
-            <a href="/@action.Key">@action.Value</a>
+            <li>
+                <a href="/@action.Key">@action.Value</a>
+            </li>
+            
         } 
     </ul>
 </div>
