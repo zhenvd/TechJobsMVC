@@ -7,11 +7,11 @@ namespace TechJobsMVC.Models
         public int Id { get; }
         static private int nextId = 1;
 
-        private string Name { get; set; }
-        private Employer Employer { get; set; }
-        private Location Location { get; set; }
-        private PositionType PositionType { get; set; }
-        private CoreCompetency CoreCompetency { get; set; }
+        public string Name { get; set; }
+        public Employer Employer { get; set; }
+        public Location Location { get; set; }
+        public PositionType PositionType { get; set; }
+        public CoreCompetency CoreCompetency { get; set; }
 
         public Job()
         {
