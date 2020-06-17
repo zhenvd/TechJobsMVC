@@ -12,7 +12,7 @@ namespace TechJobsMVC.Controllers
 {
     public class ListController : Controller
     {
-        static Dictionary<string, string> ColumnChoices = new Dictionary<string, string>()
+        internal static Dictionary<string, string> ColumnChoices = new Dictionary<string, string>()
         {
             {"all", "All"},
             {"employer", "Employer"},
@@ -20,27 +20,13 @@ namespace TechJobsMVC.Controllers
             {"positionType", "Position Type"},
             {"coreCompetency", "Skill"}
         };
-        static Dictionary<string, object> TableChoices = new Dictionary<string, object>()
+        internal static Dictionary<string, object> TableChoices = new Dictionary<string, object>()
         {
             {"employer", JobData.GetAllEmployers()},
             {"location", JobData.GetAllLocations()},
             {"positionType", JobData.GetAllPositionTypes()},
             {"coreCompetency", JobData.GetAllCoreCompetencies()}
         };
-
-        //public ListController()
-        //{
-        //    //ColumnChoices.Add("all", "All");
-        //    //ColumnChoices.Add("employer", "Employer");
-        //    //ColumnChoices.Add("location", "Location");
-        //    //ColumnChoices.Add("positionType", "Position Type");
-        //    //ColumnChoices.Add("coreCompetency", "Skill");
-
-        //    TableChoices.Add("employer", JobData.GetAllEmployers());
-        //    TableChoices.Add("location", JobData.GetAllLocations());
-        //    TableChoices.Add("positionType", JobData.GetAllPositionTypes());
-        //    TableChoices.Add("coreCompetency", JobData.GetAllCoreCompetencies());
-        //}
 
         public IActionResult Index()
         {
@@ -53,6 +39,7 @@ namespace TechJobsMVC.Controllers
 
             return View();
         }
+
         // list jobs by column and value
         public IActionResult Jobs(string column, string value)
         {

@@ -8,5 +8,6 @@
     <Folder Include="Views\TechJobs\" />
     <Folder Include="Data\" />
     <Folder Include="Views\List\" />
+    <Folder Include="Views\Search\" />
   </ItemGroup>
 </Project>
