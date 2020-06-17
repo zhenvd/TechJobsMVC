@@ -8,7 +8,7 @@ namespace TechJobsMVC.Data
 {
     public class JobData
     {
-        static private string DATA_FILE = "job_data.csv";
+        static private string DATA_FILE = "Data/job_data.csv";
 
         static bool IsDataLoaded = false;
 
@@ -142,7 +142,8 @@ namespace TechJobsMVC.Data
 
             List<string[]> rows = new List<string[]>();
 
-            using (StreamReader reader = File.OpenText("job_data.csv"))
+
+            using (StreamReader reader = File.OpenText(DATA_FILE))
             {
                 while (reader.Peek() >= 0)
                 {
@@ -158,43 +159,16 @@ namespace TechJobsMVC.Data
             string[] headers = rows[0];
             rows.Remove(headers);
 
-            //// Parse each row array into a more friendly Dictionary
-            //foreach (string[] row in rows)
-            //{
-            //    Dictionary<string, string> rowDict = new Dictionary<string, string>();
+            AllJobs = new List<Job>();
 
-            //    for (int i = 0; i < headers.Length; i++)
-            //    {
-            //        rowDict.Add(headers[i], row[i]);
-            //    }
-            //    AllJobs.Add(rowDict);
-            //}
-
-            // Parse each row array into a more friendly Dictionary
+            // Parse each row array 
             foreach (string[] row in rows)
             {
-                //Dictionary<string, string> rowDict = new Dictionary<string, string>();
-                //for (int i = 0; i < headers.Length; i++)
-                //{
-                //    //rowDict.Add(headers[i], row[i]);
-                //    newJob.Name = headers[i];
-                //}
-
-                //Job newJob = new Job();
-                //newJob.Name = row[0];
-                //newJob.Employer = new Employer(row[1]);
-                //newJob.Location = new Location(row[2]);
-                //newJob.PositionType = new PositionType(row[3]);
-                //newJob.CoreCompetency = new CoreCompetency(row[4]);
-
                 string aName = row[0];
                 string anEmployer = row[1];
                 string aLocation = row[2];
                 string aPositionType = row[3];
                 string aCoreCompetency = row[4];
-                //String aLocation = record.get(2);
-                //String aPosition = record.get(3);
-                //String aSkill = record.get(4);
 
                 Employer newEmployer = (Employer)FindExistingObject(AllEmployers, anEmployer);
                 Location newLocation = (Location)FindExistingObject(AllLocations, aLocation);
