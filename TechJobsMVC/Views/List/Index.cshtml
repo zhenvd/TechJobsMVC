@@ -20,10 +20,9 @@
                 <ul>
                     @foreach (var item in category.Value)
                     {
-                    <li>
-                        
-                        <a asp-controller="List" asp-action="Jobs"  asp-route-column="@category.Key" asp-route-value="@item">@item</a>
-                    </li>
+                        <li>
+                            <a asp-controller="List" asp-action="Jobs"  asp-route-column="@category.Key" asp-route-value="@item">@item</a>
+                        </li>
                     }
 
                 </ul>
