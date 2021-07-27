@@ -36,10 +36,10 @@
                     <tr>
                         <td>ID: @job.Id</td>
                         <td>Name: @job.Name</td>
-                        <td>Employer: @job.Employer</td>
-                        <td>Location: @job.Location</td>
-                        <td>Position Type: @job.PositionType</td>
-                        <td>Core Competency: @job.CoreCompetency</td>
+                        <td>Employer: <a asp-controller="List" asp-action="Jobs" asp-route-column="employer" asp-route-value="@job.Employer">@job.Employer</a></td>
+                        <td>Location: <a asp-controller="List" asp-action="Jobs" asp-route-column="location" asp-route-value="@job.Location">@job.Location</a></td>
+                        <td>Position Type: <a asp-controller="List" asp-action="Jobs" asp-route-column="positionType" asp-route-value="@job.PositionType">@job.PositionType</a></td>
+                        <td>Core Competency: <a asp-controller="List" asp-action="Jobs" asp-route-column="coreCompetency" asp-route-value="@job.CoreCompetency">@job.CoreCompetency</a></td>
                     </tr>
                 }
             </table>
