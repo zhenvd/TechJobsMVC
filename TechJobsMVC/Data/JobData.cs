@@ -33,6 +33,7 @@ namespace TechJobsMVC.Data
 
             List<Job> jobs = new List<Job>();
 
+            //added value.Equals(null) to account for empty search
             if (value.ToLower().Equals("all"))
             {
                 return FindAll();
